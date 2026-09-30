@@ -100,11 +100,11 @@
         currentIndex = 0;
 
         if (version === "firstversion") {
-          buttonversion1.disabled = true;
-          buttonversion2.disabled = false;
+          buttonversion1.classList.add("active");
+          buttonversion2.classList.remove ("active");
         } else {
-          buttonversion1.disabled = false;
-          buttonversion2.disabled = true;
+          buttonversion1.classList.add("active");
+          buttonversion2.classList.remove ("active");
         }
         createScene();
       }

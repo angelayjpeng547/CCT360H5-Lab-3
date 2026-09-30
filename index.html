@@ -8,9 +8,105 @@
   </head>
 
   <body>
+    <h1>Lab 3: Photo Carousel</h1>
+    <p class="instructions">Present the same three images in two different sequences, where each version creates a different narrative or interpretation. Each version must have a beginning, a middle, and an end.</p>
+
+    <div class="story-container">
+      <div id="interactive-frame" class="image-frame">
+        <img id="story-pictures" class="story-pictures" src="" alt="Story Image" />
+    </div>
+
+    <div id="chapter" class="chapter">Beginning</div>
+      <p id="story-text" class="story-text">London, the capital of England and the United Kingdom, is a 21</p>
+      <p class="navigation-instructions">Click the image to advance to the next scene.</p>
+    </div>
+    <script>
+
+    // Defined all variables and DOM elements needed for the story
+    currentStory = "firstversion";
+    currentIndex = 0;
+
+    const imageElement = document.createElement("story-pictures");
+    const chapterElement = document.createElement("chapter");
+    const textElement = document.createElement("text")
+    const buttonversion1 = document.createElement("button");
+    const buttonversion2 = document.createElement("button");
+    const clickableFrame = document.createElement("clickable-frame");
+
+    const images = {};
+
+    const stories = {
+      firstversion:[
+        {
+          chapter:"Beginning",
+          image: image/london,
+          text: "London, the capital of England and the United Kingdom, is a 21"
+        },
+        {
+          chapter: "Middle",
+          image: images/amsterdam, 
+          text: "Amsterdam is the captal of the Netherlands. It is known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the city’s 17th-century Golden Age."
+        },
+        {
+          chapter: "End",
+          image: images.shanghai,
+          text: "Shanghai, on China’s central coast, is the country’s biggest city and a global financial hub. Its heart is the Bund, a famed waterfront promenade lined with colonial-era buildings."
+        }
+      ],
+
+      secondversion:[
+        {
+          chapter:"Beginning",
+          image: images.shanghai,
+          text: ""
+        },
+        {
+          chapter: "Middle",
+          image: images.london, 
+          text: ""
+        },
+        {
+          chapter: "End",
+          image: images.amsterdam,
+          text: ""
+        }
+      ]
+        
+      }
+
+      function createScene(){
+        const currentScene = stories[currentStory][currentIndex];
+        imageElement.src = currentScene.image;
+
+        setTimeout(() => {
+          imageElement.style.opacity = 1;
+        }, 100);
+      }
+      function nextChapter(){
+        currentIndex = (currentIndex + 1) % stories[currentStory].length;
+        createScene();
+      }
+
+      function switchVersion(version){
+        currentStory = version;
+        currentIndex = 0;
+
+        if (version === "firstversion") {
+          buttonversion1.disabled = true;
+          buttonversion2.disabled = false;
+        } else {
+          buttonversion1.disabled = false;
+          buttonversion2.disabled = true;
+        }
+        createScene();
+      }
+
+    buttonversion1.addEventListener("click", () => switchVersion("firstversion"));
+    buttonversion2.addEventListener("click", () => switchVersion("secondversion"));
+    clickableFrame.addEventListener("click", nextChapter);
+
+    createScene();
+    </script>
     
   </body>
-
-  <script>
-
-  </script>
+</html>

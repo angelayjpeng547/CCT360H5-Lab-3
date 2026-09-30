@@ -17,7 +17,7 @@
     </div>
     <div class="story-container">
       <div id="interactive-frame" class="image-frame">
-        <img id="story-pictures" class="story-pictures" src="" alt="Story Image" />
+        <img id="story-pictures" class="story-pictures" src="images/London.jpg" alt="Story Image" />
     </div>
 
     <div id="chapter" class="chapter">Beginning</div>
@@ -30,12 +30,12 @@
     currentStory = "firstversion";
     currentIndex = 0;
 
-    const imageElement = document.createElement("story-pictures");
-    const chapterElement = document.createElement("chapter");
-    const textElement = document.createElement("text")
-    const buttonversion1 = document.createElement("button");
-    const buttonversion2 = document.createElement("button");
-    const clickableFrame = document.createElement("clickable-frame");
+    const imageElement = document.getElementById("story-pictures");
+    const chapterElement = document.getElementById("chapter");
+    const textElement = document.getElementById("story-text")
+    const buttonversion1 = document.getElementById("buttonversion1");
+    const buttonversion2 = document.getElementById("buttonversion2");
+    const clickableFrame = document.getElementById("interactive-frame");
 
     const images = {
       amsterdam: "images/Amsterdam.jpg",
@@ -87,8 +87,11 @@
         imageElement.src = currentScene.image;
 
         setTimeout(() => {
+          imageElement.src = currentScene.image;
+          chapterElement.innerText = currentScene.chapter;
+          textElement.innerText = currentScene.text;
           imageElement.style.opacity = 1;
-        }, 100);
+        },200);
       }
       function nextChapter(){
         currentIndex = (currentIndex + 1) % stories[currentStory].length;
@@ -103,8 +106,8 @@
           buttonversion1.classList.add("active");
           buttonversion2.classList.remove ("active");
         } else {
-          buttonversion1.classList.add("active");
-          buttonversion2.classList.remove ("active");
+          buttonversion1.classList.remove("active");
+          buttonversion2.classList.add ("active");
         }
         createScene();
       }

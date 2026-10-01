@@ -12,8 +12,8 @@
     <p class="instructions">Present the same three images in two different sequences, where each version creates a different narrative or interpretation. Each version must have a beginning, a middle, and an end.</p>
 
     <div class="buttons">
-      <button id="buttonversion1" class="active">Version 1: The sequence of my 2023 summer trip</button>
-      <button id="buttonversion2">Version 2: The reverse sequence of my 2023 summer trip</button>
+      <button id="buttonversion1" class="active">Version 1: The sequence of my 2023 summer trip: Facts</button>
+      <button id="buttonversion2">Version 2: The reverse sequence of my 2023 summer trip: My Experiences in Summer 2023</button>
     </div>
     <div class="story-container">
       <div id="interactive-frame" class="image-frame">
@@ -21,7 +21,7 @@
     </div>
 
     <div id="chapter" class="chapter">Beginning</div>
-      <p id="story-text" class="story-text">London, the capital of England and the United Kingdom, is a 21</p>
+      <p id="story-text" class="story-text">London is the capital of the United Kingdom. London has a strong influence on world art, architecture, culture, cinema, entertainment, commerce, finance, edtucation, healthcare, media, science, technology, tourism, transport and communications. London is one of the world's major financial centres and Europe's largest city economy.</p>
       <p class="navigation-instructions">Click the image to advance to the next scene.</p>
     </div>
     <script>
@@ -44,39 +44,40 @@
     };
 
     const stories = {
+      //The first version tells a story of the facts of the three cities I visited during the summer of 2023.
       firstversion:[
         {
           chapter:"Beginning",
           image: images.london,
-          text: "London, the capital of England and the United Kingdom, is a 21"
+          text: "London is the capital of the United Kingdom. London has a strong influence on world art, architecture, culture, cinema, entertainment, commerce, finance, edtucation, healthcare, media, science, technology, tourism, transport and communications. London is one of the world's major financial centres and Europe's largest city economy."
         },
         {
           chapter: "Middle",
           image: images.amsterdam, 
-          text: "Amsterdam is the captal of the Netherlands. It is known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the city’s 17th-century Golden Age."
+          text: "Amsterdam is the captal of the Netherlands. It is known for its artistic heritage, elaborate canal system and narrow houses with gabled facades, legacies of the city’s 17th-century Golden Age. This was my first time visitng the Netherlands and Amsterdam."
         },
         {
           chapter: "End",
           image: images.shanghai,
-          text: "Shanghai, on China’s central coast, is the country’s biggest city and a global financial hub. Its heart is the Bund, a famed waterfront promenade lined with colonial-era buildings."
+          text: "Shanghai, on China’s central coast, is the country’s biggest city and a global financial hub. Its heart is the Bund, a famed waterfront promenade lined with colonial-era buildings. "
         }
       ],
-
+        //The second version tells a story of the vibe of the trips in reverse order
       secondversion:[
         {
           chapter:"Beginning",
           image: images.shanghai,
-          text: "Shanghai is "
+          text: "The last place visited in summer 2023 for my high school to university transition that happened between January 2023 and June 2023, Shanghai had an excellent vibe during the night time where I enjoyed the nightlife and the lights of the buildings. In the Puxi side, I enjoyed visiting The Bund, People's Square and Yu Garden which were the 1920s European style neoclassical buildings and landscapes while Pudong consisted of newer buildings built in 1993 such as Oriental Pearl TV Tower, Shanghai Tower and Shanghai World Financial Tower feeling a more modern vibe than Puxi. Outside of Shanghai, I had also been to Suzhou, Ningbo, Nantong, Guangzhou, Shenzhen, Wuxi, Hangzhou, Huzhou, Beijing, and Nanjing which all did not provide an excellent vibe that Shanghai. A city located on the edge of the country provided a scenic and excellent vibe, I was there to visit my grandparents after having not returned to China since January 2018 due to me being busy with my high school studies and the COVID-19 pandemic that ruined everything including restrictions to travelling."
         },
         {
           chapter: "Middle",
           image: images.amsterdam, 
-          text: ""
+          text: "The second place that I went to during my school to university transition break was Amsterdam. This was my first time to the Netherlands and the 15th European city I travelled to after Paris, London, Venice, Rome, Vienna, Prague, Munich, Salzburg, Budapest, Cambridge, York, Edinburgh, Bristol, and Bath. Amsterdam had a relaxed, coze and vibrant vibe that blended the historical 17th century charm with a modern lifestyle, even when the city is very small. Relaxed during a canal trip felt like stepping into a slow-moving, cinematic world where the worried energy of the city completely melts away. Overall, Amsterdam was not the only place I had been to in the Netherlands, but also the munipalicity of Veere where the Neeltje Jans is located that provided a cool vibe, The Hague which provided the same vibe as Amsterdam, and Zaandam in the municipalicity in Zaanstad. Celebrated my 18th birthday, Amsterdam and the entire Netherlands was cozy, comfort and being together. Overall, The Netherlands was a relaxed vibe that provided a lot of tourism."
         },
         {
           chapter: "End",
           image: images.london,
-          text: ""
+          text: "I decided to take a break from studying and travel to Europe for a fun and relaxed time during my high school to university transition period that I was busy with between January 2023 and June 2023. The very first place I had been to was London UK, which was my second time visiting with the first time being in August 2017. Since the August 2017 trip I only travelled there for 3 days, it was not enough so I went there for a second time to spend more time visiting attractions that I missed for the first trip. Beginning with the British Museum, I saw the world-class, massive scale artwork that spanned over two years of human history and culture. The Sky Garden provided a 360-degree panoramic vista of the entire city skyline through giant floor-to-ceiling glass windows and an open-air rooftop terrace. The London Eye provided a view of the entire London UK through a continuous 30-minute rotation of the entire London UK."
         }
       ]
         

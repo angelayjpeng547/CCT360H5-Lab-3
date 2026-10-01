@@ -27,8 +27,8 @@
     <script>
 
     // Defined all variables and DOM elements needed for the story
-    currentStory = "firstversion";
-    currentIndex = 0;
+    let currentStory = "firstversion"; // variable
+    let currentIndex = 0; //variable
 
     const imageElement = document.getElementById("story-pictures");
     const chapterElement = document.getElementById("chapter");
@@ -99,8 +99,8 @@
       }
 
       function switchVersion(version){
-        currentStory = version;
-        currentIndex = 0;
+        let currentStory = version;
+        let currentIndex = 0;
 
         if (version === "firstversion") {
           buttonversion1.classList.add("active");

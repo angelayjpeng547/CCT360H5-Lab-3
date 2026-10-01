@@ -82,26 +82,33 @@
         
       }
 
+      //Function 1: createScene(): Creates a new story scene
       function createScene(){
         const currentScene = stories[currentStory][currentIndex];
         imageElement.src = currentScene.image;
 
         setTimeout(() => {
+          //DOM Manipulation for manipulating the image
           imageElement.src = currentScene.image;
+          //DOM Manipulation for changing the chapter
           chapterElement.innerText = currentScene.chapter;
+          //DOM Manipulation for changing the story text
           textElement.innerText = currentScene.text;
           imageElement.style.opacity = 1;
         },200);
       }
+
+      //Function 2: nextChapter(): Goes to the next chapter of the story
       function nextChapter(){
         currentIndex = (currentIndex + 1) % stories[currentStory].length;
         createScene();
       }
 
+      //Function 3: switchVersion(version): Switch version depending on the button
       function switchVersion(version){
         currentStory = version;
         currentIndex = 0;
-
+        // DOM Manipulation to change the button appearence
         if (version === "firstversion") {
           buttonversion1.classList.add("active");
           buttonversion2.classList.remove ("active");
@@ -112,6 +119,7 @@
         createScene();
       }
 
+    //Event Listeners for a "click" sound
     buttonversion1.addEventListener("click", () => switchVersion("firstversion"));
     buttonversion2.addEventListener("click", () => switchVersion("secondversion"));
     clickableFrame.addEventListener("click", nextChapter);

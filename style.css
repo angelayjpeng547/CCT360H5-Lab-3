@@ -42,7 +42,7 @@ button.active{
     background: rgb(255, 230, 234);
     padding: 20px;
     border-radius: 16px;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 
@@ -75,4 +75,5 @@ button.active{
     font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
     color: black;
+    text-align: center;
 }

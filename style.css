@@ -11,6 +11,7 @@ body{
 h1{
     color:black;
     margin: 10px;
+    align-items: center;
 }
 .buttons{
     margin-bottom: 10px;
